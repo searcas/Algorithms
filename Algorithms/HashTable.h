@@ -8,7 +8,7 @@ public:
 	~HashTable();
 	void FillArray(const char* item = "-1");
 	void HashFuncNumOne(std::string array[], std::string* value);
-	void HashFuncNumTwo(std::string array[], std::string* value,int sizeOfItems);
+	void HashFuncNumTwo(std::string array[], std::string* value,int sizeOfItems,int bestMod);
 
 
 private:

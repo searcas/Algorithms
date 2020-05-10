@@ -138,11 +138,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BruteForcing.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BruteForcing.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="LinkedList.h" />
   </ItemGroup>

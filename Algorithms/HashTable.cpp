@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdio.h> 
 #include <stdlib.h> 
-
+#include "BruteForcing.h"
 
 
 
@@ -12,7 +12,7 @@ HashTable::HashTable(int size)
 	_mTheArray = new std::string[size];
 	std::string numbers []= { "5","4","3","2","12","20","52","42","23","22","12","230","12","20","52","42","23","22","12","232"};
 
-	HashFuncNumTwo(_mTheArray, numbers, 20);
+	HashFuncNumTwo(_mTheArray, numbers, 20, 33);
 }
 void HashTable::FillArray(const char* item)
 {
@@ -34,32 +34,25 @@ void HashTable::HashFuncNumOne(std::string hashMap[], std::string* items)
 	}
 
 }
-void HashTable::HashFuncNumTwo(std::string hashMap[], std::string* items, int sizeOfItems)
+void HashTable::HashFuncNumTwo(std::string hashMap[], std::string* items, int sizeOfItems, int bestMod)
 {
 	
-	int* lowestCollision = new int[_mArraySize];
-	delete[]hashMap;
-	//bruteForcing
-	for (int bruteForcing = 0; bruteForcing < _mArraySize; bruteForcing++)
-	{
-		int newCtr = 0;
-		hashMap = new std::string[_mArraySize];
 		for (int index = 0; index < sizeOfItems; index++)
 		{
-			int num = stoi(items[index]) % (bruteForcing + 1);
+			int num = stoi(items[index]) % 34;
 			if (hashMap[num] == "-1" || hashMap[num] =="")
 			{
 				hashMap[num] = items[index];
-				//std::cout << "HashMap inserted new number "<<items[index]<<" -> on index -> " << num << std::endl;
+			//	std::cout << "HashMap inserted new number "<<items[index]<<" -> on index -> " << num << std::endl;
 			}
 			else
 			{
 				while (hashMap[num] !="")
 				{
-					newCtr++;
+					collisionCtr++;
 					if (num != _mArraySize)
 					{
-						//std::cout << "Collision on index " << num << " index is already taken." << std::endl;
+					//	std::cout << "Collision on index " << num << " index is already taken." << std::endl;
 						num++;
 					}
 					else
@@ -68,33 +61,16 @@ void HashTable::HashFuncNumTwo(std::string hashMap[], std::string* items, int si
 					}
 				}
 				hashMap[num] = items[index];
-				//std::cout << "HashMap inserted new number " << items[index] << " -> on index ->" << num << std::endl;
+			//	std::cout << "HashMap inserted new number " << items[index] << " -> on index ->" << num << std::endl;
 
 			}
-			lowestCollision[bruteForcing] = newCtr;
 		}
-	}
-	int lowestNumbOfCollision = lowestCollision[0];
-	int indexofLowestNum;
-	for (int i = 0; i < _mArraySize; i++)
-	{
-		if (lowestNumbOfCollision < lowestCollision[i])
-		{
-			continue;
-		}
-		else
-		{
-			lowestNumbOfCollision = lowestCollision[i];
-			indexofLowestNum = i;
-		}
-	}
-
+	
 	for (int i = 0; i < _mArraySize; i++)
 	{
 		std::cout << "elemen " << i << " is: " << _mTheArray[i] << std::endl;
 	}
-	std::cout << "TOTAL NUMBERS OF COLLISION IS >>>>>>>>>> " << lowestNumbOfCollision << " <<<<<<<<<<<<<<<" << std::endl;
-	delete[]lowestCollision;
+	std::cout << "TOTAL NUMBERS OF COLLISIONS IS >>>>>>>>>>( " << collisionCtr << " )<<<<<<<<<<<<<<<< "<< std::endl;
 }
 HashTable::~HashTable()
 {
