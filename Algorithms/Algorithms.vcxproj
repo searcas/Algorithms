@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="BruteForcing.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="HashTableMap.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="BruteForcerValueTester.h" />
     <ClInclude Include="BruteForcing.h" />
     <ClInclude Include="ExerciseMapHashing.h" />
