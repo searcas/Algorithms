@@ -27,6 +27,9 @@
     <ClCompile Include="BruteForcing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HashTableMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h">
@@ -36,6 +39,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BruteForcing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HashTableMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BruteForcerValueTester.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExerciseMapHashing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

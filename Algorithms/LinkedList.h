@@ -41,8 +41,8 @@ public:
 class DLinkedList
 {
 public:
-	DLink* firstLink;
-	DLink* lastLink;
+	DLink* firstLink = nullptr;
+	DLink* lastLink = nullptr;
 public:
 	void InsertInFirstPosition(int data);
 	void InsertInLastPosition(int data);

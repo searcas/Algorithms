@@ -140,12 +140,16 @@
   <ItemGroup>
     <ClCompile Include="BruteForcing.cpp" />
     <ClCompile Include="HashTable.cpp" />
+    <ClCompile Include="HashTableMap.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BruteForcerValueTester.h" />
     <ClInclude Include="BruteForcing.h" />
+    <ClInclude Include="ExerciseMapHashing.h" />
     <ClInclude Include="HashTable.h" />
+    <ClInclude Include="HashTableMap.h" />
     <ClInclude Include="LinkedList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

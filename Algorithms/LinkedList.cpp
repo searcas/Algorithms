@@ -82,6 +82,7 @@ Link* LinkList::RemoveSpecificLink(int num)
 {
 	Link* cur = currentLink;
 	Link* previous = currentLink;
+
 	if (!IsEpmty())
 	{
 		while (cur->data != num)
@@ -97,9 +98,10 @@ Link* LinkList::RemoveSpecificLink(int num)
 				return nullptr;
 			}
 		}
+		
 		if (currentLink == cur)
 		{
-			currentLink == currentLink->next;
+			currentLink = currentLink->next;
 		}
 		else
 		{
@@ -160,7 +162,6 @@ void DLinkedList::InsertAfterAKey(int key, int newKey)
 		{
 			return;
 		}
-
 	}
 	if (currentLink == lastLink)
 	{
@@ -175,6 +176,7 @@ void DLinkedList::InsertAfterAKey(int key, int newKey)
 	newLink->prev = currentLink;
 	currentLink->next = newLink;
 }
+
 void DLinkedList::InsertInOrder(int key)
 {
 	DLink* newLink = new DLink(key);
@@ -199,7 +201,6 @@ void DLinkedList::InsertInOrder(int key)
 }
 bool DLinkedList::IsEmpty()
 {
-	
 	return (firstLink == nullptr);
 }
 void DLinkedList::Display()
