@@ -3,26 +3,38 @@
 #include <iomanip>
 Heap::Heap(int maxSize) :_mMaxSize(maxSize)
 {
-	theHeap = new Data[maxSize];
+	theHeap = new Data*[maxSize];
+
+	for (int i = 0; i <_mMaxSize; i++)
+	{
+		*theHeap = new Data;
+	}
 }
 
 Heap::~Heap()
 {
+	for (int i = 0; i < _mMaxSize; i++)
+	{
+		delete[]*theHeap;
+	}
+	delete[]theHeap;
 }
-void Heap::Insert(int index, Data newData)
+void Heap::Insert(int index, Data* newData)
 {
 	theHeap[index] = newData;
 	_mItemsInArray++;
 }
 void Heap::GenerateFilledArray(int randNum)
 {
-	Data randomData;
+	
+	Data* randomData;
 
 	for (int i = 0; i < _mMaxSize; i++)
 	{
-		randomData = ( (int)(rand() * randNum) + 1);
+		randomData = new Data( (int)(rand() % randNum) + 1);
 
 		this->Insert(i, randomData); 
+
 	}
 }
 int* Heap::GetIndentArray(int rows)
@@ -78,7 +90,7 @@ int* Heap::ReverseArray(int* theArray, int length)
 		{
 			if (i < _mItemsInArray)
 			{
-				std::cout <<std::setprecision(2)<<theHeap[i]._mKey;
+				std::cout << theHeap[i]->_mKey;
 				for (int k = 0; k < spaces; k++)
 					std::cout << " ";
 			}
@@ -88,6 +100,7 @@ int* Heap::ReverseArray(int* theArray, int length)
 		std::cout << std::endl;
 
 	}
+	delete[] indent;
 }
 Data::Data(int key) : _mKey(key) 
 {

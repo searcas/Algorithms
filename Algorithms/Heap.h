@@ -21,14 +21,14 @@ public:
 	Heap();
 
 	~Heap();
-	void Insert(int index, Data newData);
+	void Insert(int index, Data* newData);
 	void GenerateFilledArray(int index);
 	void PrintTree(int rows);
 	int* GetIndentArray(int rows);
 	int* ReverseArray(int* theArray,int length);
 
 public:
-	Data* theHeap;
+	Data** theHeap;
 	int _mItemsInArray = 0;
 	int _mMaxSize;
 
