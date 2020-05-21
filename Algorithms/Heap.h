@@ -18,7 +18,7 @@ class Heap
 {
 public:
 	Heap(int maxSize);
-	Heap();
+	Heap() {}
 
 	~Heap();
 	void Insert(int index, Data* newData);
@@ -26,9 +26,14 @@ public:
 	void PrintTree(int rows);
 	int* GetIndentArray(int rows);
 	int* ReverseArray(int* theArray,int length);
+	void IncrementTheArray();
+	Data* Pop();
+	void HeapTheArray(int index);
+	void HeapSort()
+
 
 public:
-	Data** theHeap;
+	Data**  theHeap;
 	int _mItemsInArray = 0;
 	int _mMaxSize;
 

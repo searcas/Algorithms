@@ -22,8 +22,64 @@ Heap::~Heap()
 void Heap::Insert(int index, Data* newData)
 {
 	theHeap[index] = newData;
-	_mItemsInArray++;
 }
+void Heap::IncrementTheArray()
+{
+	_mItemsInArray++;
+
+}
+Data* Heap::Pop()
+{
+	if (!_mItemsInArray != 0)
+	{
+		Data* root = theHeap[0];
+		theHeap[0] = theHeap[--_mItemsInArray];
+		HeapTheArray(0);
+		return root;
+	}
+	return nullptr;
+
+}
+void Heap::HeapTheArray(int index)
+{
+	int largestChild;
+	Data* root = theHeap[index];
+
+	while (index < _mItemsInArray / 2)
+	{
+		int leftChild = 2 * index + 1;
+		int rightChild = leftChild + 1;
+
+		if (rightChild < _mItemsInArray && theHeap[leftChild]->_mKey < theHeap[rightChild]->_mKey)
+		{
+			largestChild = rightChild;
+		}
+		else
+		{
+			largestChild = leftChild;
+		}
+
+		if (root->_mKey >= theHeap[largestChild]->_mKey)
+			break;
+		theHeap[index] = theHeap[largestChild];
+
+		index = largestChild;
+		
+	}
+	theHeap[index] = root;
+
+}
+void Heap::HeapSort()
+{
+	for (int  i = _mMaxSize; i >= 0; i--)
+	{
+		Data* largestnode = Pop();
+		Insert(i, largestnode);
+	}
+
+}
+
+
 void Heap::GenerateFilledArray(int randNum)
 {
 	
