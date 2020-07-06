@@ -122,7 +122,7 @@ void Sorting::ShellSort(std::vector<int>& vec)
 	}
 }
 
-void Sorting::HeapSort(std::vector<int> vec)
+void Sorting::HeapSort(std::vector<int>& vec)
 {
-	Heap::Get().HeapSortMax(vec);
+	Heap::GetHeapSorting(vec);
 }

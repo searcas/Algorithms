@@ -45,6 +45,7 @@ public:
 		static Heap instance;
 		return instance;
 	}
+	inline static void GetHeapSorting(std::vector<int>& vec) { return Get().HeapSortMax(vec); }
 private:
 	inline int Parent(int i)
 	{
