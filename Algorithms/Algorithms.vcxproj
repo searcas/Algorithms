@@ -99,7 +99,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,12 +142,17 @@
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="BruteForcing.cpp" />
     <ClCompile Include="CustomProblems.cpp" />
+    <ClCompile Include="DivideAndConquer.cpp" />
+    <ClCompile Include="Exercise.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="HashTableMap.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Queues.cpp" />
     <ClCompile Include="Recursion.cpp" />
+    <ClCompile Include="Sorting.cpp" />
+    <ClCompile Include="Stacks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AlgorithmProblems.h" />
@@ -155,12 +160,17 @@
     <ClInclude Include="BruteForcerValueTester.h" />
     <ClInclude Include="BruteForcing.h" />
     <ClInclude Include="CustomProblems.h" />
+    <ClInclude Include="DivideAndConquer.h" />
+    <ClInclude Include="Exercise.h" />
     <ClInclude Include="ExerciseMapHashing.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="HashTableMap.h" />
     <ClInclude Include="Heap.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="Queues.h" />
     <ClInclude Include="Recursion.h" />
+    <ClInclude Include="Sorting.h" />
+    <ClInclude Include="Stacks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

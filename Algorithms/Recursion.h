@@ -23,3 +23,9 @@ public:
 
 };
 
+int rec(std::vector<int>& vec, int total, int start, std::vector<int>& memo);
+
+int count_sets(std::vector<int>vec, int total);
+
+
+

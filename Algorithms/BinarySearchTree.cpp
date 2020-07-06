@@ -55,7 +55,6 @@ void BinaryTree::InOrderTraverseTree(Node* mainNode)
 		InOrderTraverseTree(mainNode->leftChild);
 		std::cout << mainNode->toString() << std::endl;
 		InOrderTraverseTree(mainNode->rightChild);
-
 	}
 }
 void BinaryTree::PreOrderTraverseTree(Node* mainNode)
@@ -99,7 +98,6 @@ Node* BinaryTree::FindNode(int key)
 		}
 	}
 	return mainNode;
-
 }
 bool BinaryTree::Remove(int key)
 {
@@ -119,7 +117,7 @@ bool BinaryTree::Remove(int key)
 		else
 		{
 			isItAlfeChild = false;
-			mainNode = mainNode->leftChild;
+			mainNode = mainNode->rightChild;
 		}
 		if (mainNode == nullptr)
 		{

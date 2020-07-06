@@ -68,7 +68,6 @@ Link* LinkList::FindNumber(int num)
 					std::cout << "Number does not exist" << std::endl;
 					return nullptr;
 				}
-				
 			}
 		return temp;
 	}
@@ -109,8 +108,11 @@ Link* LinkList::RemoveSpecificLink(int num)
 		}
 	}
 	else
+	{
 		std::cout << "List is empty" << std::endl;
-	return nullptr;
+		return nullptr;
+	}
+	return cur;
 }
 
 DLink::DLink(int data): _mData(data)
@@ -134,6 +136,7 @@ void DLinkedList::InsertInFirstPosition(int storage)
 	firstLink = tempLink;
 
 }
+
 void DLinkedList::InsertInLastPosition(int storage)
 {
 	DLink* tempLink = new DLink(storage);
@@ -147,7 +150,6 @@ void DLinkedList::InsertInLastPosition(int storage)
 		lastLink->next = tempLink;
 		tempLink->prev = lastLink;
 	}
-
 	lastLink = tempLink;
 }
 void DLinkedList::InsertAfterAKey(int key, int newKey)
@@ -195,7 +197,6 @@ void DLinkedList::InsertInOrder(int key)
 	else
 	{
 		previous->next = newLink;
-
 	}
 	newLink->next = current;
 }
@@ -209,7 +210,7 @@ void DLinkedList::Display()
 
 	while (current != nullptr)
 	{
-		std::cout << "DATA : -> "<< current->_mData << std::endl;;
+		std::cout << "DATA : -> "<< current->_mData << std::endl;
 		//std::cout << "Next link is: -> " << ((current->next == nullptr) ? 0 : current->next->data) << std::endl;
 		current = current->next;
 	}

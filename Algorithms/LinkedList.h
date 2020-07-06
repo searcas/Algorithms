@@ -25,6 +25,7 @@ public:
 	void DisplayData();
 	Link* FindNumber(int num);
 	Link* RemoveSpecificLink(int num);
+
 };
 
 class DLink

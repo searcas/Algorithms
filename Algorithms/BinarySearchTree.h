@@ -6,7 +6,7 @@ class Node
 {
 public:
 	Node(int key, std::string);
-	~Node();
+	~Node() {}
 
 	inline std::string toString() const
 	{
