@@ -1,5 +1,8 @@
 #include "Sorting.h"
 #include <iostream>
+#include "Heap.h"
+
+
 Sorting::Sorting()
 {
 }
@@ -117,4 +120,9 @@ void Sorting::ShellSort(std::vector<int>& vec)
 
 		}
 	}
+}
+
+void Sorting::HeapSort(std::vector<int> vec)
+{
+	Heap::Get().HeapSortMax(vec);
 }

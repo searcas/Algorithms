@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "Sorting.h"
 class Data
 {
 public:
@@ -37,6 +38,13 @@ public:
 	void MaxHeap(std::vector<int>& A, int i);
 
 	void BuildMaxHeap(std::vector<int>& A);
+	//friend class
+public:
+	static Heap& Get()
+	{
+		static Heap instance;
+		return instance;
+	}
 private:
 	inline int Parent(int i)
 	{
@@ -51,12 +59,11 @@ private:
 		return i * 2 + 2;
 	}
 public:
-	void HeapSort(std::vector<int>& A);
+	void HeapSortMax(std::vector<int>& A);
 public:
 	Data**  theHeap;
 	int _mItemsInArray = 0;
 	int _mMaxSize;
-
 };
 
 

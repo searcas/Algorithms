@@ -209,7 +209,7 @@ int* Heap::ReverseArray(int* theArray, int length)
 	 }
 
  }
- void Heap::HeapSort(std::vector<int>& A)
+ void Heap::HeapSortMax(std::vector<int>& A)
  {
 	 BuildMaxHeap(A);
 	 int heapSize = A.size() - 1;

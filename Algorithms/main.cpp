@@ -386,6 +386,8 @@ int main()
 
 	Heap heap;
 	heap.HeapSort(test2);
+	Sorting sort;
+	
 //	std::vector<int>vec{ 100,110,90,115,200 };
 	//Results res = FindMaximumSubArray(vec, 0, vec.size() - 1);
 	
